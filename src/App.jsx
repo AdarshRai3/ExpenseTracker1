@@ -1,39 +1,34 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import {useState} from "react"
+import React from "react";
+import ExpenseForm from "./components/ExpenseForm/ExpenseForm"
+import ExpenseInfo from  "./components/ExpenseInfo/ExpenseInfo"
+import ExpenseList from "./components/ExpenseList/ExpenseList"
 
-function App() {
-	const [count, setCount] = useState(0);
+export default function App(){
+  // Create state for the expenses here
+   const [expense, setExpense] = useState([]);
+   return (
+    <>
+      <h2 className="mainHeading">Expense Tracker</h2>
+      <div className="App">
+        {/* Render expense form here */
+       
+        }
+        
+          <ExpenseForm/>
+         
+        <div className="expenseContainer">
+          {/* Render Expense Info here
+          Render Expense List here */
+          }
+           <ExpenseInfo/>
+          <ExpenseList/>
+          
+        </div>
+      </div>
+    </>
+  );
 
-	return (
-		<>
-			<div>
-				<a href="https://vitejs.dev" target="_blank">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://react.dev" target="_blank">
-					<img
-						src={reactLogo}
-						className="logo react"
-						alt="React logo"
-					/>
-				</a>
-			</div>
-			<h1>Vite + React</h1>
-			<div className="card">
-				<button onClick={() => setCount((count) => count + 1)}>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.jsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">
-				Click on the Vite and React logos to learn more
-			</p>
-		</>
-	);
+ 
 }
-
-export default App;
